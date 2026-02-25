@@ -8,6 +8,13 @@ export function createProductCard(product) {
 
   const imageWrap = document.createElement('div');
   imageWrap.className = 'product-image';
+  // Add Recommended tag for Celeste and Eclave
+  if (product.name && (product.name.toLowerCase() === 'celeste' || product.name.toLowerCase() === 'eclave')) {
+    const recommendedTag = document.createElement('div');
+    recommendedTag.className = 'recommended-tag';
+    recommendedTag.textContent = 'Recommended';
+    imageWrap.appendChild(recommendedTag);
+  }
   const img = document.createElement('img');
   img.alt = product.name;
   img.src = product.image;

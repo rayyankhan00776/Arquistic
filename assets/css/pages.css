@@ -211,6 +211,27 @@
   background: var(--bg-primary);
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+}
+
+.recommended-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #e53935;
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px 5px 16px;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.12);
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  border: 2px solid #fff;
 }
 
 .product-card:hover {

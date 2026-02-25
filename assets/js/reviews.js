@@ -389,3 +389,9 @@ class ReviewCounter {
     });
   }
 }
+
+window.addEventListener('unload', () => {
+  try {
+    localStorage.removeItem('arquistic_review_count');
+  } catch (e) {}
+});
