@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arquistic - Cart" />
+    <title>Arquistic - Cart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html" aria-label="Arquistic home">
+          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home-section">HOME</a>
+          <a class="nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="nav-link" href="index.html#contact-section">CONTACT</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="Search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-btn" href="cart.html" aria-label="Shopping cart" aria-current="page">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <a class="breadcrumb" href="index.html#shop-section">← Continue Shopping</a>
+        <h1 class="page-title">Shopping Cart</h1>
+        
+        <!-- Empty Cart State -->
+        <div class="empty-cart" data-empty-cart style="display: none;">
+          <div class="empty-state">
+            <h2>Your cart is empty</h2>
+            <p>Discover our collection of luxury fragrances</p>
+            <a href="index.html#shop-section" class="btn btn-primary">Continue Shopping</a>
+          </div>
+        </div>
+
+        <!-- Cart with Items -->
+        <div class="cart-filled" data-cart-filled style="display: none;">
+          <div class="cart-layout">
+            <section class="cart-items">
+              <div class="items-header">
+                <h2>YOUR ITEMS <span data-cart-item-count>(1)</span></h2>
+              </div>
+              <div class="items-container" data-cart-items></div>
+            </section>
+
+            <aside class="cart-summary" data-cart-summary>
+              <div class="summary-card">
+                <div class="summary-title">ORDER SUMMARY</div>
+                <div class="summary-row"><span>Subtotal</span><span data-summary-subtotal>PKR 0</span></div>
+                <div class="summary-row"><span>Delivery</span><span data-summary-delivery>PKR 300</span></div>
+                <div class="summary-row"><span>Tax</span><span data-summary-tax>PKR 0</span></div>
+                <div class="summary-total"><span>Total</span><span data-summary-total>PKR 0</span></div>
+                <a class="btn btn-primary btn-block" href="checkout.html">PLACE ORDER</a>
+                <p class="summary-terms">By placing an order, you agree to our terms & conditions</p>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Delivery Method Section -->
+          <div class="delivery-method">
+            <h3>DELIVERY METHOD</h3>
+            <div class="delivery-options">
+              <label class="delivery-option">
+                <input type="radio" name="delivery" value="standard" checked />
+                <div class="delivery-info">
+                  <span class="delivery-name">Standard Delivery</span>
+                  <span class="delivery-time">3-5 Business Days</span>
+                  <span class="delivery-price">PKR 300</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <span>© <span data-year></span> Arquistic</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

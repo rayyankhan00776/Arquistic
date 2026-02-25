@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Celeste",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 1750,
+      "currency": "PKR",
+      "description": "Celeste is vibrant, fruity, and beautifully feminine. It blends sparkling fruity notes with soft floral tones, creating a scent that feels youthful and glamorous. Bright and uplifting, Celeste is perfect for daytime wear, brunches, and special gatherings. It's playful, confident, and irresistibly charming.",
+      "inspiration": "Inspired by Bombshell by Victoria's Secret",
+      "image": "assets/images/celeste.PNG",
+      "rating": 4.8,
+      "reviews": 120,
+      "notes": {
+        "top": ["Passionfruit", "Grapefruit", "Pineapple", "Tangerine"],
+        "middle": ["Peony", "Vanilla", "Orchid", "Red Berries", "Jasmine"],
+        "base": ["Musk", "Woody Notes"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    },
+    {
+      "id": 2,
+      "name": "Eclave",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 2050,
+      "currency": "PKR",
+      "description": "Eclave is a rich, warm, and addictive fragrance that radiates luxury. With its sweet amber warmth and smooth woody undertones, it creates a glowing aura around the wearer. Mysterious yet elegant, Eclave is perfect for evenings, special occasions, and moments when you want to stand out effortlessly. It's bold, long-lasting, and unforgettable.",
+      "inspiration": "Inspired by Baccarat Rouge 540",
+      "image": "assets/images/eclave.PNG",
+      "rating": 4.7,
+      "reviews": 98,
+      "notes": {
+        "top": ["Bitter Almond", "Saffron"],
+        "middle": ["Egyptian Jasmine", "Cedar", "Rose"],
+        "base": ["Ambergris", "Woody Notes", "Musk", "Caramel"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    },
+    {
+      "id": 3,
+      "name": "Fiora",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 1850,
+      "currency": "PKR",
+      "description": "Fiora is delicate, romantic, and graceful. With blooming floral accords and a soft, elegant base, it captures the beauty of a fresh garden in full bloom. Feminine and refined, Fiora is ideal for women who appreciate elegance and timeless charm. It's soft yet memorable — a fragrance that speaks gently but leaves a lasting impression.",
+      "inspiration": "Inspired by Gucci Flora by Gucci",
+      "image": "assets/images/flora.PNG",
+      "rating": 4.6,
+      "reviews": 84,
+      "notes": {
+        "top": ["Pear Blossom"],
+        "middle": ["White Gardenia", "Jasmine"],
+        "base": ["Brown Sugar", "Patchouli"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    },
+    {
+      "id": 4,
+      "name": "Scarzaar",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 1950,
+      "currency": "PKR",
+      "description": "Scarzaar is powerful, fresh, and magnetic. It opens with a burst of crisp freshness followed by spicy and woody notes that create a strong masculine presence. Designed for confident men who lead from the front, Scarzaar is versatile — perfect for daily wear or evening events. It leaves a clean, bold trail that commands attention.",
+      "inspiration": "Inspired by Sauvage by Dior",
+      "image": "assets/images/saczaar.PNG",
+      "rating": 4.9,
+      "reviews": 145,
+      "notes": {
+        "top": ["Bergamot"],
+        "middle": ["Sichuan Pepper", "Lavender", "Star Anise", "Nutmeg"],
+        "base": ["Ambroxan", "Vanilla"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    }
+  ]
+}

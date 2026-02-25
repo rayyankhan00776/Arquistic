@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arquistic - About" />
+    <title>Arquistic - About</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html" aria-label="Arquistic home">
+          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home-section">HOME</a>
+          <a class="nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="nav-link" href="index.html#contact-section">CONTACT</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="Search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-btn" href="cart.html" aria-label="Shopping cart">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <h1 class="page-title">About Arquistic</h1>
+        
+        <section class="about-section">
+          <div class="about-content">
+            <h2 class="section-title">Our Story</h2>
+            <p class="about-text">
+              Arquistic is a modern luxury fragrance house crafted for individuals who want to leave a lasting impression. 
+              Inspired by elegance, confidence, and timeless sophistication, Arquistic blends high-quality fragrance oils 
+              with refined craftsmanship to create scents that speak before you do.
+            </p>
+            <p class="about-text">
+              Each perfume is designed to reflect personality — bold, graceful, powerful, or romantic — making every spray 
+              an unforgettable experience. Arquistic is not just a fragrance; it's an identity.
+            </p>
+          </div>
+
+          <div class="about-values">
+            <h2 class="section-title">What We Stand For</h2>
+            <div class="values-grid">
+              <div class="value-item">
+                <h3>Elegance</h3>
+                <p>Timeless sophistication in every bottle</p>
+              </div>
+              <div class="value-item">
+                <h3>Confidence</h3>
+                <p>Scents that empower and inspire</p>
+              </div>
+              <div class="value-item">
+                <h3>Quality</h3>
+                <p>High-quality fragrance oils and refined craftsmanship</p>
+              </div>
+              <div class="value-item">
+                <h3>Identity</h3>
+                <p>Fragrances that reflect your unique personality</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-collection">
+            <h2 class="section-title">Our Collection</h2>
+            <p class="about-text">
+              Discover our signature collection of four exquisite fragrances, each inspired by iconic luxury scents 
+              and crafted to perfection. From the vibrant and playful Celeste to the bold and magnetic Scarzaar, 
+              from the rich and luxurious Eclave to the delicate and romantic Fiora — find the scent that 
+              speaks to your soul.
+            </p>
+          </div>
+
+          <div class="about-reviews">
+            <div class="reviews-header">
+              <h2 class="section-title">Customer Reviews</h2>
+              <p class="reviews-count">Based on 329 verified reviews</p>
+            </div>
+            
+            <div class="reviews-slideshow">
+              <button class="review-nav review-nav-prev" aria-label="Previous review">‹</button>
+              <div class="reviews-track-container">
+                <div class="reviews-track" id="reviewsTrack"></div>
+              </div>
+              <button class="review-nav review-nav-next" aria-label="Next review">›</button>
+            </div>
+            
+            <div class="reviews-dots" id="reviewsDots"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <span>© <span data-year></span> Arquistic</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/reviews.js"></script>
+  </body>
+</html>

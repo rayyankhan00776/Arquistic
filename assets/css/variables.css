@@ -1,0 +1,34 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light-gray: #f8f8f8;
+  --border-gray: #e8e8e8;
+  --medium-gray: #6b6b6b;
+  --dark-gray: #2c2c2c;
+
+  --bg-primary: var(--white);
+  --bg-dark: var(--black);
+  --text-primary: var(--dark-gray);
+  --text-secondary: var(--medium-gray);
+  --border-color: var(--border-gray);
+  --hover-bg: var(--light-gray);
+
+  --font-primary: 'Playfair Display', Georgia, serif;
+  --font-secondary: 'Lato', Helvetica, Arial, sans-serif;
+
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}

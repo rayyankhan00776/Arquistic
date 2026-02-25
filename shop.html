@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arquistic - Shop" />
+    <title>Arquistic - Shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html" aria-label="Arquistic home">
+          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#home-section">HOME</a>
+          <a class="nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="nav-link" href="index.html#contact-section">CONTACT</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="Search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-btn" href="cart.html" aria-label="Shopping cart">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="shop-container">
+        <div class="shop-header">
+          <h1 class="page-title">Shop All Fragrances</h1>
+        </div>
+
+        <div class="shop-content">
+          <aside class="filters-sidebar" aria-label="Filters">
+            <div class="filters-title">Filters</div>
+            <p class="text-secondary">(Optional) Filters UI scaffold.</p>
+          </aside>
+
+          <main class="products-section" aria-label="Products">
+            <div class="products-grid" data-products-grid></div>
+            <div class="pagination" aria-label="Pagination">
+              <button class="btn btn-text" type="button" disabled>Previous</button>
+              <button class="btn btn-text" type="button" disabled>Next</button>
+            </div>
+          </main>
+        </div>
+      </div>
+    </main>
+
+    <div class="product-modal-overlay" id="productModal" aria-hidden="true">
+      <div class="product-modal" role="dialog" aria-modal="true" aria-label="Product details">
+        <button class="modal-close" type="button" aria-label="Close">×</button>
+
+        <div class="product-detail-grid">
+          <div class="product-image-section">
+            <img id="mainImage" src="" alt="" />
+          </div>
+
+          <div class="product-info-section">
+            <div class="product-rating">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="review-count">(<span id="reviewCount">0</span> Reviews)</span>
+            </div>
+
+            <h1 class="product-title" id="productTitle"></h1>
+            <p class="product-type" id="productType"></p>
+            <p class="product-inspiration" id="productInspiration"></p>
+            <p class="product-price" id="productPrice"></p>
+
+            <p class="product-description" id="productDescription"></p>
+
+            <div class="product-specs">
+              <div class="spec">
+                <label>VOLUME</label>
+                <span id="volume"></span>
+              </div>
+              <div class="spec">
+                <label>CONCENTRATION</label>
+                <span id="concentration"></span>
+              </div>
+            </div>
+
+            <div class="fragrance-notes">
+              <label>FRAGRANCE NOTES</label>
+              <div class="notes-container" id="notesContainer"></div>
+            </div>
+
+            <button class="btn btn-primary btn-large" id="addToCartBtn" type="button">ADD TO CART</button>
+            <p class="shipping-info">Free shipping only when all four fragrances are ordered together</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <span>© <span data-year></span> Arquistic</span>
+          <span class="footer-links">
+            <a href="contact.html">Contact</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

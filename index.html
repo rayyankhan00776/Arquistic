@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arquistic - Luxury Fragrance" />
+    <title>Arquistic - Discover Your Signature Fragrance</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a class="logo" href="index.html" aria-label="Arquistic home">
+          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="#home-section">HOME</a>
+          <a class="nav-link" href="#shop-section">SHOP</a>
+          <a class="nav-link" href="#about-section">ABOUT</a>
+          <a class="nav-link" href="#contact-section">CONTACT</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="Search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </button>
+          <a class="icon-btn" href="cart.html" aria-label="Shopping cart">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="cart-count" data-cart-count>0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home-section">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="hero-tagline">NEW COLLECTION IN 2026</span>
+            <h1 class="hero-title">Discover Your Signature Fragrance</h1>
+            <p class="hero-description">
+              Experience the art of luxury fragrance with our curated collection
+              of immersive perfumes. Each bottle tells a unique story of
+              elegance and sophistication.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#shop-section">EXPLORE COLLECTION</a>
+              <a class="btn btn-text" href="#about-section">LEARN MORE</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="assets/images/featured-image.PNG" alt="Signature fragrance" />
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section" id="shop-section">
+        <div class="featured-container">
+          <div class="featured-header">
+            <span class="section-tagline">BEST FRAGRANCES - OUR COLLECTIONS</span>
+            <h2 class="section-title">Curated Fragrances</h2>
+            <p class="section-desc">
+              Each fragrance is meticulously crafted with the finest ingredients, designed for the discerning individual who appreciates the art of perfumery.
+            </p>
+          </div>
+
+          <div class="products-grid" data-products-grid></div>
+        </div>
+      </section>
+
+      <section class="trust-section">
+        <div class="trust-container">
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">🚚</div>
+            <h3 class="trust-title">FREE SHIPPING</h3>
+            <p class="trust-desc">Complimentary shipping only when all four fragrances are ordered together</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">✓</div>
+            <h3 class="trust-title">AUTHENTIC GUARANTEE</h3>
+            <p class="trust-desc">100% genuine products with certification of authenticity</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">🎁</div>
+            <h3 class="trust-title">LUXURY PACKAGING</h3>
+            <p class="trust-desc">Every order arrives in exquisite gift-ready presentation</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="product-modal-overlay" id="productModal" aria-hidden="true">
+        <div class="product-modal" role="dialog" aria-modal="true" aria-label="Product details">
+          <button class="modal-close" type="button" aria-label="Close">×</button>
+
+          <div class="product-detail-grid">
+            <div class="product-image-section">
+              <img id="mainImage" src="" alt="" />
+            </div>
+
+            <div class="product-info-section">
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="review-count">(<span id="reviewCount">0</span> Reviews)</span>
+              </div>
+
+              <h1 class="product-title" id="productTitle"></h1>
+              <p class="product-type" id="productType"></p>
+              <p class="product-inspiration" id="productInspiration"></p>
+              <p class="product-price" id="productPrice"></p>
+
+              <p class="product-description" id="productDescription"></p>
+
+              <div class="product-specs">
+                <div class="spec">
+                  <label>VOLUME</label>
+                  <span id="volume"></span>
+                </div>
+                <div class="spec">
+                  <label>CONCENTRATION</label>
+                  <span id="concentration"></span>
+                </div>
+              </div>
+
+              <div class="fragrance-notes">
+                <label>FRAGRANCE NOTES</label>
+                <div class="notes-container" id="notesContainer"></div>
+              </div>
+
+              <button class="btn btn-primary btn-large" id="addToCartBtn" type="button">ADD TO CART</button>
+              <p class="shipping-info">Free shipping only when all four fragrances are ordered together</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-item">
+            <h3 class="stat-number">3+</h3>
+            <p class="stat-label">YEARS OF EXCELLENCE</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">6K+</h3>
+            <p class="stat-label">HAPPY CUSTOMERS</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">100%</h3>
+            <p class="stat-label">SATISFACTION GUARANTEE</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">4</h3>
+            <p class="stat-label">SIGNATURE FRAGRANCES</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-reviews-section">
+        <div class="container">
+          <div class="reviews-header">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="reviews-count">Based on 329 verified reviews</p>
+          </div>
+          
+          <div class="reviews-slideshow">
+            <button class="review-nav review-nav-prev" aria-label="Previous review">‹</button>
+            <div class="reviews-track-container">
+              <div class="reviews-track" id="reviewsTrack"></div>
+            </div>
+            <button class="review-nav review-nav-next" aria-label="Next review">›</button>
+          </div>
+          
+          <div class="reviews-dots" id="reviewsDots"></div>
+        </div>
+      </section>
+
+      <section class="home-about-section" id="about-section">
+        <div class="container">
+          <section class="about-section">
+            <div class="about-content">
+              <h2 class="section-title">About Arquistic</h2>
+              <p class="about-text">
+                Arquistic is a modern luxury fragrance house crafted for individuals who want to leave a lasting impression.
+                Inspired by elegance, confidence, and timeless sophistication, we blend high-quality fragrance oils
+                with refined craftsmanship to create scents that speak before you do.
+              </p>
+              <p class="about-text">
+                Each perfume is designed to reflect personality — bold, graceful, powerful, or romantic — making every spray
+                an unforgettable experience. Arquistic is not just a fragrance; it is an identity.
+              </p>
+            </div>
+
+            <div class="about-values">
+              <h2 class="section-title">What We Stand For</h2>
+              <div class="values-grid">
+                <div class="value-item">
+                  <h3>Elegance</h3>
+                  <p>Timeless sophistication in every bottle</p>
+                </div>
+                <div class="value-item">
+                  <h3>Confidence</h3>
+                  <p>Scents that empower and inspire</p>
+                </div>
+                <div class="value-item">
+                  <h3>Quality</h3>
+                  <p>High-quality fragrance oils and refined craftsmanship</p>
+                </div>
+                <div class="value-item">
+                  <h3>Identity</h3>
+                  <p>Fragrances that reflect your unique personality</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Events & Press Section -->
+      <section class="home-events-section">
+        <div class="container">
+          <h2 class="section-title">Events & Press</h2>
+          <p class="section-subtitle">See Arquistic in action at industry events and media coverage</p>
+          
+          <div class="events-grid">
+            <div class="event-card">
+              <div class="event-video-wrapper">
+                <video class="event-video" controls poster>
+                  <source src="assets/videos/IMG_5529.MOV" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="event-info">
+                <h3 class="event-title">Brand Launch Event</h3>
+                <p class="event-description">Experience the unveiling of Arquistic's latest fragrance collection at our exclusive brand launch event.</p>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-video-wrapper">
+                <video class="event-video" controls poster>
+                  <source src="assets/videos/IMG_5590.MOV" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="event-info">
+                <h3 class="event-title">Press & Media Coverage</h3>
+                <p class="event-description">Industry leaders and media partners share their reactions to the Arquistic fragrance experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact-section">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4 class="footer-title">ARQUISTIC</h4>
+          <p class="footer-desc">
+            Discover refined perfumery crafted with precision, premium ingredients, and timeless elegance—designed to enhance your presence and leave a memorable signature.
+          </p>
+          <div class="newsletter">
+            <h5 class="newsletter-title">NEWSLETTER</h5>
+            <form class="newsletter-form" action="#" method="post">
+              <input id="newsletter-email" type="email" placeholder="Enter your email" required />
+              <button type="submit">SUBSCRIBE</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">EXPLORE</h4>
+          <ul class="footer-links">
+            <li><a href="#shop-section">New Arrivals</a></li>
+            <li><a href="#shop-section">Best Sellers</a></li>
+            <li><a href="#shop-section">Collections</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">CONTACT</h4>
+          <div class="footer-contact-details" data-contact-details data-hide-whatsapp="true">
+            <p class="text-secondary">Loading contact details…</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">COMPANY</h4>
+          <ul class="footer-links">
+            <li><a href="#about-section">About Arquistic</a></li>
+            <li><a href="#home-section">Home</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© <span data-year></span> ARQUISTIC. ALL RIGHTS RESERVED.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.link/1gio6a"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat on WhatsApp"
+      title="Chat on WhatsApp"
+    >
+      <img class="whatsapp-float-icon" src="assets/images/whatsappicon.png" alt="" aria-hidden="true" />
+    </a>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/reviews.js"></script>
+  </body>
+</html>
