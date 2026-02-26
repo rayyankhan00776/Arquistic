@@ -49,6 +49,41 @@
     min-height: auto;
   }
 
+  /* Hero featured image: prevent overly-tall image on phones */
+  .hero-image {
+    justify-self: center;
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: 360px;
+  }
+
+  /* Product detail modal: keep image reasonable and improve scroll area */
+  .product-modal-overlay {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .product-modal {
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+  }
+
+  .product-image-section {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .product-image-section img {
+    height: auto;
+    max-height: 260px;
+  }
+
+  .product-info-section {
+    max-height: none;
+    overflow: visible;
+  }
+
   .trust-section,
   .featured-section,
   .stats-section {
