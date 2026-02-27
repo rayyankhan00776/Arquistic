@@ -58,21 +58,25 @@ async function sendOrderToWebhook(payload) {
 
   const bodyText = JSON.stringify(payload);
 
-  // Prefer sendBeacon because it works well for static sites + cross-origin.
-  if (navigator.sendBeacon) {
-    const blob = new Blob([bodyText], { type: 'text/plain;charset=utf-8' });
-    const queued = navigator.sendBeacon(url, blob);
-    if (!queued) throw new Error('sendBeacon failed to queue request');
+  // Prefer fetch(no-cors) with keepalive so the browser attempts to deliver the full body
+  // even if we navigate away right after submission.
+  try {
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: bodyText,
+    });
     return;
+  } catch (err) {
+    // Fall back to sendBeacon when fetch is blocked or fails.
+    if (!navigator.sendBeacon) throw err;
   }
 
-  // Fallback: no-cors fetch (request is sent, but response is opaque).
-  await fetch(url, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: bodyText,
-  });
+  const blob = new Blob([bodyText], { type: 'text/plain;charset=utf-8' });
+  const queued = navigator.sendBeacon(url, blob);
+  if (!queued) throw new Error('sendBeacon failed to queue request');
 }
 
 export function initCheckoutOrderForm(products) {
