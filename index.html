@@ -3,30 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Arquistic - Luxury Fragrance" />
-    <title>Arquistic - Discover Your Signature Fragrance</title>
+    <meta
+      name="description"
+      content="Shop Arquistic luxury fragrances in Pakistan. Discover Celeste, Eclave, Fiora, and Scarzaar—premium scents with fast delivery and secure checkout."
+    />
+    <meta name="robots" content="index,follow" />
+    <title>Arquistic | Luxury Fragrances in Pakistan</title>
+
+    <link rel="canonical" href="https://arquistic.store/" />
+    <meta property="og:site_name" content="Arquistic" />
+    <meta property="og:title" content="Arquistic | Luxury Fragrances in Pakistan" />
+    <meta
+      property="og:description"
+      content="Discover Celeste, Eclave, Fiora, and Scarzaar—premium luxury fragrances. Order online with fast delivery in Pakistan."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arquistic.store/" />
+    <meta property="og:image" content="https://arquistic.store/assets/images/featured-image.PNG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arquistic | Luxury Fragrances in Pakistan" />
+    <meta
+      name="twitter:description"
+      content="Discover Celeste, Eclave, Fiora, and Scarzaar—premium luxury fragrances. Order online with fast delivery in Pakistan."
+    />
+    <meta name="twitter:image" content="https://arquistic.store/assets/images/featured-image.PNG" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#000000" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://arquistic.store/#organization",
+            "name": "Arquistic",
+            "url": "https://arquistic.store/",
+            "logo": "https://arquistic.store/assets/images/logo.png",
+            "sameAs": [
+              "https://www.instagram.com/arquistic_?igsh=ZXd2bzZubHljMmlk",
+              "https://www.tiktok.com/@arquistic_?_r=1&_t=ZS-940CGiy7ix5"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://arquistic.store/#website",
+            "url": "https://arquistic.store/",
+            "name": "Arquistic",
+            "publisher": { "@id": "https://arquistic.store/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
       <div class="header-container">
         <a class="logo" href="index.html" aria-label="Arquistic home">
-          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+          <img
+            class="logo-img"
+            src="assets/images/logo.png"
+            alt="Arquistic logo"
+            width="625"
+            height="469"
+            decoding="async"
+          />
         </a>
         <nav class="nav" aria-label="Primary">
-          <a class="nav-link" href="#home-section">HOME</a>
-          <a class="nav-link" href="#shop-section">SHOP</a>
-          <a class="nav-link" href="#about-section">ABOUT</a>
-          <a class="nav-link" href="#contact-section">CONTACT</a>
+          <a class="nav-link" href="index.html">HOME</a>
+          <a class="nav-link" href="shop.html">SHOP</a>
+          <a class="nav-link" href="about.html">ABOUT</a>
+          <a class="nav-link" href="contact.html">CONTACT</a>
         </nav>
         <div class="header-actions">
           <button class="icon-btn" type="button" aria-label="Search">
@@ -40,7 +103,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero" id="home-section">
         <div class="hero-container">
           <div class="hero-content">
@@ -57,7 +120,14 @@
             </div>
           </div>
           <div class="hero-image">
-            <img src="assets/images/featured-image.PNG" alt="Signature fragrance" />
+            <img
+              src="assets/images/featured-image.PNG"
+              alt="Arquistic featured fragrance"
+              width="1024"
+              height="1024"
+              decoding="async"
+              fetchpriority="high"
+            />
           </div>
         </div>
       </section>
@@ -76,7 +146,8 @@
         </div>
       </section>
 
-      <section class="trust-section">
+      <section class="trust-section" aria-labelledby="trust-heading">
+        <h2 id="trust-heading" class="sr-only">Why shop with Arquistic</h2>
         <div class="trust-container">
           <div class="trust-card">
             <div class="trust-icon" aria-hidden="true">🚚</div>
@@ -102,7 +173,7 @@
 
           <div class="product-detail-grid">
             <div class="product-image-section">
-              <img id="mainImage" src="" alt="" />
+              <img id="mainImage" src="" alt="" width="1080" height="1920" decoding="async" />
             </div>
 
             <div class="product-info-section">
@@ -111,7 +182,7 @@
                 <span class="review-count">(<span id="reviewCount">0</span> Reviews)</span>
               </div>
 
-              <h1 class="product-title" id="productTitle"></h1>
+              <h2 class="product-title" id="productTitle"></h2>
               <p class="product-type" id="productType"></p>
               <p class="product-inspiration" id="productInspiration"></p>
               <p class="product-price" id="productPrice"></p>
@@ -141,7 +212,8 @@
         </div>
       </div>
 
-      <section class="stats-section">
+      <section class="stats-section" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" class="sr-only">Arquistic highlights</h2>
         <div class="stats-container">
           <div class="stat-item">
             <h3 class="stat-number">3+</h3>
@@ -314,11 +386,19 @@
       class="whatsapp-float"
       href="https://wa.link/1gio6a"
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer noopener"
       aria-label="Chat on WhatsApp"
       title="Chat on WhatsApp"
     >
-      <img class="whatsapp-float-icon" src="assets/images/whatsappicon.png" alt="" aria-hidden="true" />
+      <img
+        class="whatsapp-float-icon"
+        src="assets/images/whatsappicon.png"
+        alt=""
+        aria-hidden="true"
+        width="512"
+        height="512"
+        decoding="async"
+      />
     </a>
 
     <script type="module" src="assets/js/main.js"></script>

@@ -3,29 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Arquistic - Shop" />
-    <title>Arquistic - Shop</title>
+    <meta
+      name="description"
+      content="Browse Arquistic’s full fragrance collection—Celeste, Eclave, Fiora, and Scarzaar. View notes, pricing in PKR, and add to cart in seconds."
+    />
+    <meta name="robots" content="index,follow" />
+    <title>Shop | Arquistic Luxury Fragrances</title>
+
+    <link rel="canonical" href="https://arquistic.store/shop.html" />
+    <meta property="og:site_name" content="Arquistic" />
+    <meta property="og:title" content="Shop | Arquistic Luxury Fragrances" />
+    <meta
+      property="og:description"
+      content="Browse Celeste, Eclave, Fiora, and Scarzaar. View fragrance notes and pricing in PKR, then add to cart."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arquistic.store/shop.html" />
+    <meta property="og:image" content="https://arquistic.store/assets/images/featured-image.PNG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shop | Arquistic Luxury Fragrances" />
+    <meta
+      name="twitter:description"
+      content="Browse Celeste, Eclave, Fiora, and Scarzaar. View fragrance notes and pricing in PKR, then add to cart."
+    />
+    <meta name="twitter:image" content="https://arquistic.store/assets/images/featured-image.PNG" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#000000" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://arquistic.store/#organization",
+            "name": "Arquistic",
+            "url": "https://arquistic.store/",
+            "logo": "https://arquistic.store/assets/images/logo.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://arquistic.store/#website",
+            "url": "https://arquistic.store/",
+            "name": "Arquistic",
+            "publisher": { "@id": "https://arquistic.store/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
       <div class="header-container">
         <a class="logo" href="index.html" aria-label="Arquistic home">
-          <img class="logo-img" src="assets/images/logo.png" alt="Arquistic" />
+          <img
+            class="logo-img"
+            src="assets/images/logo.png"
+            alt="Arquistic logo"
+            width="625"
+            height="469"
+            decoding="async"
+          />
         </a>
         <nav class="nav" aria-label="Primary">
-          <a class="nav-link" href="index.html#home-section">HOME</a>
-          <a class="nav-link" href="index.html#shop-section">SHOP</a>
-          <a class="nav-link" href="index.html#about-section">ABOUT</a>
-          <a class="nav-link" href="index.html#contact-section">CONTACT</a>
+          <a class="nav-link" href="index.html">HOME</a>
+          <a class="nav-link" href="shop.html" aria-current="page">SHOP</a>
+          <a class="nav-link" href="about.html">ABOUT</a>
+          <a class="nav-link" href="contact.html">CONTACT</a>
         </nav>
         <div class="header-actions">
           <button class="icon-btn" type="button" aria-label="Search">
@@ -39,7 +98,7 @@
       </div>
     </header>
 
-    <main class="page">
+    <main id="main-content" class="page">
       <div class="shop-container">
         <div class="shop-header">
           <h1 class="page-title">Shop All Fragrances</h1>
@@ -51,13 +110,13 @@
             <p class="text-secondary">(Optional) Filters UI scaffold.</p>
           </aside>
 
-          <main class="products-section" aria-label="Products">
+          <section class="products-section" aria-label="Products">
             <div class="products-grid" data-products-grid></div>
             <div class="pagination" aria-label="Pagination">
               <button class="btn btn-text" type="button" disabled>Previous</button>
               <button class="btn btn-text" type="button" disabled>Next</button>
             </div>
-          </main>
+          </section>
         </div>
       </div>
     </main>
@@ -68,7 +127,7 @@
 
         <div class="product-detail-grid">
           <div class="product-image-section">
-            <img id="mainImage" src="" alt="" />
+            <img id="mainImage" src="" alt="" width="1080" height="1920" decoding="async" />
           </div>
 
           <div class="product-info-section">
@@ -77,7 +136,7 @@
               <span class="review-count">(<span id="reviewCount">0</span> Reviews)</span>
             </div>
 
-            <h1 class="product-title" id="productTitle"></h1>
+            <h2 class="product-title" id="productTitle"></h2>
             <p class="product-type" id="productType"></p>
             <p class="product-inspiration" id="productInspiration"></p>
             <p class="product-price" id="productPrice"></p>

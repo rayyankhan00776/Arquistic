@@ -1,5 +1,5 @@
 export function createProductCard(product) {
-  const card = document.createElement('div');
+  const card = document.createElement('article');
   card.className = 'product-card';
   card.tabIndex = 0;
   card.setAttribute('role', 'button');
