@@ -80,6 +80,86 @@
   background-image: url('../images/icons/shopping-bag.svg');
 }
 
+.icon-menu {
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  box-shadow: 0 -7px 0 var(--text-primary), 0 7px 0 var(--text-primary);
+  border-radius: 1px;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: stretch;
+  justify-content: flex-end;
+  z-index: 1100;
+}
+
+.mobile-nav-overlay.is-open {
+  display: flex;
+}
+
+.mobile-nav-panel {
+  width: min(360px, 86vw);
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 20px 18px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+
+.mobile-nav-close {
+  justify-self: end;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: var(--white);
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav {
+  margin-top: 10px;
+  display: grid;
+  align-content: start;
+  grid-auto-rows: max-content;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 18px 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mobile-nav-link:hover {
+  color: var(--white);
+}
+
+.mobile-nav-link:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .cart-count {
   position: absolute;
   top: -8px;
@@ -425,6 +505,28 @@
 @media (max-width: 767px) {
   .footer-container {
     grid-template-columns: 1fr;
+  }
+
+  /* Footer headings: stacked with dividers (reference-style idea) */
+  .footer-col:not(:first-child) .footer-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .footer-col:not(:first-child) .footer-title::after {
+    content: '›';
+    opacity: 0.75;
+    font-size: 18px;
+    transform: translateY(-1px);
+  }
+
+  .footer-col:not(:first-child) .footer-links,
+  .footer-col:not(:first-child) .footer-contact-details {
+    padding: 10px 0 18px 0;
   }
 
   .footer-bottom {

@@ -26,12 +26,25 @@
 }
 
 @media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+
+  .icon-btn-menu {
+    display: inline-flex;
+  }
+
   .container {
     padding: 0 var(--spacing-md);
   }
 
   .logo-img {
     height: 40px;
+  }
+
+  .header-container {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-md);
   }
 
   .products-grid {
@@ -100,5 +113,11 @@
 
   .footer-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon-btn-menu {
+    display: none;
   }
 }

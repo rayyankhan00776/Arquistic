@@ -74,6 +74,9 @@
           <a class="nav-link" href="contact.html" aria-current="page">CONTACT</a>
         </nav>
         <div class="header-actions">
+          <button class="icon-btn icon-btn-menu" type="button" aria-label="Menu" data-mobile-nav-open>
+            <span class="icon-menu" aria-hidden="true"></span>
+          </button>
           <button class="icon-btn" type="button" aria-label="Search">
             <span class="icon icon-search" aria-hidden="true"></span>
           </button>
@@ -84,6 +87,18 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-nav-overlay" data-mobile-nav aria-hidden="true">
+      <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <button class="mobile-nav-close" type="button" data-mobile-nav-close aria-label="Close menu">×</button>
+        <nav class="mobile-nav" aria-label="Mobile">
+          <a class="mobile-nav-link" href="index.html">HOME</a>
+          <a class="mobile-nav-link" href="shop.html">SHOP</a>
+          <a class="mobile-nav-link" href="about.html">ABOUT</a>
+          <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+        </nav>
+      </div>
+    </div>
 
     <main id="main-content" class="page">
       <div class="container">

@@ -2,7 +2,7 @@ import { CONFIG } from './config.js';
 import { fetchJson } from './api.js';
 import { formatMoney } from './utils.js';
 import { createProductCard, setupProductModal } from './product.js';
-import { updateCartBadges, updateYear } from './ui.js';
+import { initMobileNav, updateCartBadges, updateYear } from './ui.js';
 import { renderContactDetails } from './contactDetails.js';
 import { cartStore, renderCartUI, renderCheckoutSummary } from './cart.js';
 import { initCheckoutOrderForm } from './orders.js';
@@ -37,6 +37,7 @@ function init() {
   updateCartBadges();
   window.addEventListener('cart:changed', updateCartBadges);
   renderContactDetails();
+  initMobileNav();
 
   (async () => {
     try {
