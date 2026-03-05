@@ -147,7 +147,7 @@ export function updateCartSummary(products) {
   const hasAll4Products = allProductIds.size === 4 && allProductIds.size === products.length;
   
   const delivery = hasAll4Products ? 0 : (subtotal > 0 ? 300 : 0);
-  const tax = 5;
+  const tax = Math.round(subtotal * CONFIG.taxRate);
   const total = subtotal + delivery + tax;
 
   const countEl = document.querySelector('[data-cart-item-count]');
@@ -220,9 +220,8 @@ export function renderCheckoutSummary(products) {
   const allProductIds = new Set(items.map((i) => i.productId));
   const hasAll4Products = allProductIds.size === 4 && allProductIds.size === products.length;
 
-  // Update summary
   const delivery = hasAll4Products ? 0 : (subtotal > 0 ? 300 : 0);
-  const tax = 5;
+  const tax = Math.round(subtotal * CONFIG.taxRate);
   const total = subtotal + delivery + tax;
 
   const subtotalEl = document.querySelector('[data-summary-subtotal]');

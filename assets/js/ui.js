@@ -57,3 +57,27 @@ export function updateCartBadges() {
     el.textContent = String(count);
   });
 }
+
+export function initActiveNav() {
+  const sectionIds = ['home-section', 'shop-section', 'about-section', 'events-section'];
+  const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    },
+    { rootMargin: '-15% 0px -75% 0px' }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}

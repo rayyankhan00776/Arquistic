@@ -1,8 +1,8 @@
 import { CONFIG } from './config.js';
 import { fetchJson } from './api.js';
-import { formatMoney } from './utils.js';
+import { formatMoney, showToast } from './utils.js';
 import { createProductCard, setupProductModal } from './product.js';
-import { initMobileNav, updateCartBadges, updateYear } from './ui.js';
+import { initMobileNav, updateCartBadges, updateYear, initActiveNav } from './ui.js';
 import { renderContactDetails } from './contactDetails.js';
 import { cartStore, renderCartUI, renderCheckoutSummary } from './cart.js';
 import { initCheckoutOrderForm } from './orders.js';
@@ -32,12 +32,37 @@ function renderProductsGrids(products) {
   });
 }
 
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast('Message sent! We\u2019ll get back to you soon.');
+    form.reset();
+  });
+}
+
+function initNewsletterForm() {
+  const form = document.getElementById('newsletterForm');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast('Subscribed! Thank you for joining.');
+    form.reset();
+  });
+}
+
 function init() {
   updateYear();
   updateCartBadges();
   window.addEventListener('cart:changed', updateCartBadges);
   renderContactDetails();
   initMobileNav();
+  initActiveNav();
+  initContactForm();
+  initNewsletterForm();
 
   (async () => {
     try {

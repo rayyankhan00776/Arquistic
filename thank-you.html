@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Product details for Arquistic fragrances." />
+    <meta name="description" content="Thank you for your order from Arquistic. Your luxury fragrances are on their way." />
     <meta name="robots" content="noindex,follow" />
-    <title>Product | Arquistic</title>
+    <title>Order Confirmed | Arquistic</title>
 
-    <link rel="canonical" href="https://arquistic.store/product-detail.html" />
+    <link rel="canonical" href="https://arquistic.store/thank-you.html" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,17 +33,15 @@
           <img class="logo-img" src="assets/images/logo.png" alt="Arquistic logo" width="625" height="469" decoding="async" />
         </a>
         <nav class="nav" aria-label="Primary">
-          <a class="nav-link" href="index.html">HOME</a>
-          <a class="nav-link" href="shop.html">SHOP</a>
-          <a class="nav-link" href="about.html">ABOUT</a>
+          <a class="nav-link" href="index.html#home-section">HOME</a>
+          <a class="nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="nav-link" href="index.html#events-section">EVENTS</a>
           <a class="nav-link" href="contact.html">CONTACT</a>
         </nav>
         <div class="header-actions">
           <button class="icon-btn icon-btn-menu" type="button" aria-label="Menu" data-mobile-nav-open>
             <span class="icon-menu" aria-hidden="true"></span>
-          </button>
-          <button class="icon-btn" type="button" aria-label="Search">
-            <span class="icon icon-search" aria-hidden="true"></span>
           </button>
           <a class="icon-btn" href="cart.html" aria-label="Shopping cart">
             <span class="icon icon-cart" aria-hidden="true"></span>
@@ -57,9 +55,10 @@
       <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Menu">
         <button class="mobile-nav-close" type="button" data-mobile-nav-close aria-label="Close menu">×</button>
         <nav class="mobile-nav" aria-label="Mobile">
-          <a class="mobile-nav-link" href="index.html">HOME</a>
-          <a class="mobile-nav-link" href="shop.html">SHOP</a>
-          <a class="mobile-nav-link" href="about.html">ABOUT</a>
+          <a class="mobile-nav-link" href="index.html#home-section">HOME</a>
+          <a class="mobile-nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="mobile-nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="mobile-nav-link" href="index.html#events-section">EVENTS</a>
           <a class="mobile-nav-link" href="contact.html">CONTACT</a>
         </nav>
       </div>
@@ -67,11 +66,20 @@
 
     <main id="main-content" class="page">
       <div class="container">
-        <h1 class="page-title">Product Detail</h1>
-        <p class="text-secondary">
-          The spec uses a modal product detail UI; this page exists as a scaffold
-          placeholder and may be integrated into the shop/home modal flow.
-        </p>
+        <div class="thank-you">
+          <div class="thank-you-icon" aria-hidden="true">✓</div>
+          <h1 class="thank-you-title">Thank You for Your Order!</h1>
+          <p class="thank-you-text">
+            Your order has been placed successfully. We're preparing your luxury fragrances with care and attention.
+          </p>
+          <p class="thank-you-text">
+            You'll receive a confirmation via WhatsApp or phone call shortly with tracking details.
+          </p>
+          <div class="thank-you-actions">
+            <a class="btn btn-primary" href="index.html#shop-section">CONTINUE SHOPPING</a>
+            <a class="btn btn-text" href="index.html#home-section">BACK TO HOME</a>
+          </div>
+        </div>
       </div>
     </main>
 

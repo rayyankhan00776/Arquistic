@@ -101,68 +101,75 @@ function parseContactDetails(markdownText) {
   return items;
 }
 
+function buildContactList(items) {
+  const list = document.createElement('div');
+  list.className = 'contact-list';
+
+  for (const item of items) {
+    const a = document.createElement('a');
+    a.className = 'contact-item';
+    a.href = item.href;
+    if (item.href.startsWith('http')) {
+      a.target = '_blank';
+      a.rel = 'noreferrer';
+    }
+
+    const icon = document.createElement('span');
+    icon.className = `contact-icon contact-icon-${item.icon}`;
+    icon.setAttribute('aria-hidden', 'true');
+
+    const textWrap = document.createElement('span');
+    textWrap.className = 'contact-text';
+    const label = document.createElement('span');
+    label.className = 'contact-label';
+    label.textContent = item.label;
+
+    const value = document.createElement('span');
+    value.className = 'contact-value';
+    value.textContent = item.display || item.href;
+
+    textWrap.appendChild(label);
+    textWrap.appendChild(value);
+
+    a.appendChild(icon);
+    a.appendChild(textWrap);
+    list.appendChild(a);
+  }
+
+  return list;
+}
+
 export async function renderContactDetails() {
-  const container = document.querySelector('[data-contact-details]');
-  if (!container) return;
-  const hideWhatsApp = container.getAttribute('data-hide-whatsapp') === 'true';
+  const containers = document.querySelectorAll('[data-contact-details]');
+  if (!containers.length) return;
 
   try {
     const text = await fetchText(CONFIG.contactDetailsUrl);
-    let items = parseContactDetails(text);
-    if (hideWhatsApp) {
-      items = items.filter((item) => item.type !== 'whatsapp');
-    }
-    if (!items.length) {
+    const allItems = parseContactDetails(text);
+
+    containers.forEach((container) => {
+      const hideWhatsApp = container.getAttribute('data-hide-whatsapp') === 'true';
+      const items = hideWhatsApp ? allItems.filter((item) => item.type !== 'whatsapp') : allItems;
+
       container.textContent = '';
-      const empty = document.createElement('p');
-      empty.className = 'text-secondary';
-      empty.textContent = 'No contact details found.';
-      container.appendChild(empty);
-      return;
-    }
-
-    container.textContent = '';
-    const list = document.createElement('div');
-    list.className = 'contact-list';
-
-    for (const item of items) {
-      const a = document.createElement('a');
-      a.className = 'contact-item';
-      a.href = item.href;
-      if (item.href.startsWith('http')) {
-        a.target = '_blank';
-        a.rel = 'noreferrer';
+      if (!items.length) {
+        const empty = document.createElement('p');
+        empty.className = 'text-secondary';
+        empty.textContent = 'No contact details found.';
+        container.appendChild(empty);
+        return;
       }
 
-      const icon = document.createElement('span');
-      icon.className = `contact-icon contact-icon-${item.icon}`;
-      icon.setAttribute('aria-hidden', 'true');
-
-      const textWrap = document.createElement('span');
-      textWrap.className = 'contact-text';
-      const label = document.createElement('span');
-      label.className = 'contact-label';
-      label.textContent = item.label;
-
-      const value = document.createElement('span');
-      value.className = 'contact-value';
-      value.textContent = item.display || item.href;
-
-      textWrap.appendChild(label);
-      textWrap.appendChild(value);
-
-      a.appendChild(icon);
-      a.appendChild(textWrap);
-      list.appendChild(a);
-    }
-
-    container.appendChild(list);
+      container.appendChild(buildContactList(items));
+    });
   } catch {
-    container.textContent = '';
-    const error = document.createElement('p');
-    error.className = 'text-secondary';
-    error.textContent = 'Failed to load contact details.';
-    container.appendChild(error);
+    containers.forEach((container) => {
+      container.textContent = '';
+      const error = document.createElement('p');
+      error.className = 'text-secondary';
+      error.textContent = 'Failed to load contact details.';
+      container.appendChild(error);
+    });
   }
 }
 

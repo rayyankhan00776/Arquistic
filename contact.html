@@ -68,17 +68,15 @@
           <img class="logo-img" src="assets/images/logo.png" alt="Arquistic logo" width="625" height="469" decoding="async" />
         </a>
         <nav class="nav" aria-label="Primary">
-          <a class="nav-link" href="index.html">HOME</a>
-          <a class="nav-link" href="shop.html">SHOP</a>
-          <a class="nav-link" href="about.html">ABOUT</a>
-          <a class="nav-link" href="contact.html" aria-current="page">CONTACT</a>
+          <a class="nav-link" href="index.html#home-section">HOME</a>
+          <a class="nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="nav-link" href="index.html#events-section">EVENTS</a>
+          <a class="nav-link active" href="contact.html" aria-current="page">CONTACT</a>
         </nav>
         <div class="header-actions">
           <button class="icon-btn icon-btn-menu" type="button" aria-label="Menu" data-mobile-nav-open>
             <span class="icon-menu" aria-hidden="true"></span>
-          </button>
-          <button class="icon-btn" type="button" aria-label="Search">
-            <span class="icon icon-search" aria-hidden="true"></span>
           </button>
           <a class="icon-btn" href="cart.html" aria-label="Shopping cart">
             <span class="icon icon-cart" aria-hidden="true"></span>
@@ -92,47 +90,75 @@
       <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Menu">
         <button class="mobile-nav-close" type="button" data-mobile-nav-close aria-label="Close menu">×</button>
         <nav class="mobile-nav" aria-label="Mobile">
-          <a class="mobile-nav-link" href="index.html">HOME</a>
-          <a class="mobile-nav-link" href="shop.html">SHOP</a>
-          <a class="mobile-nav-link" href="about.html">ABOUT</a>
-          <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+          <a class="mobile-nav-link" href="index.html#home-section">HOME</a>
+          <a class="mobile-nav-link" href="index.html#shop-section">SHOP</a>
+          <a class="mobile-nav-link" href="index.html#about-section">ABOUT</a>
+          <a class="mobile-nav-link" href="index.html#events-section">EVENTS</a>
+          <a class="mobile-nav-link active" href="contact.html" aria-current="page">CONTACT</a>
         </nav>
       </div>
     </div>
 
     <main id="main-content" class="page">
-      <div class="container">
-        <h1 class="page-title">Contact</h1>
+      <section class="contact-page-section">
+        <div class="container">
+          <div class="featured-header">
+            <span class="section-tagline">WE'D LOVE TO HEAR FROM YOU</span>
+            <h1 class="section-title">Get In Touch</h1>
+            <p class="section-desc">Have questions about our fragrances or need help with an order? Reach out and we'll get back to you.</p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-form-card">
+              <form class="form" id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">FULL NAME</label>
+                    <input id="contactName" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactEmail">EMAIL ADDRESS</label>
+                    <input id="contactEmail" name="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage">YOUR MESSAGE</label>
+                  <textarea id="contactMessage" name="message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
+              </form>
+            </div>
+            <div class="contact-info-card">
+              <h3 class="contact-card-title">QUICK CONNECT</h3>
+              <p class="contact-card-desc">Prefer a faster response? Chat with us directly on WhatsApp — we typically reply within minutes.</p>
 
-        <div class="contact-layout">
-          <section class="contact-form">
-            <form class="form" action="#" method="post">
-              <div class="form-group">
-                <label for="name">FULL NAME</label>
-                <input id="name" name="name" type="text" autocomplete="name" />
-              </div>
-              <div class="form-group">
-                <label for="email">EMAIL</label>
-                <input id="email" name="email" type="email" autocomplete="email" />
-              </div>
-              <div class="form-group">
-                <label for="message">MESSAGE</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
-            </form>
-          </section>
+              <a class="contact-whatsapp-btn" href="https://wa.link/1gio6a" target="_blank" rel="noreferrer noopener">
+                <img src="assets/images/whatsappicon.png" alt="" width="24" height="24" aria-hidden="true" />
+                Chat on WhatsApp
+              </a>
 
-          <aside class="contact-info">
-            <div class="summary-card">
-              <div class="summary-title">COMPANY INFO</div>
-              <div class="contact-details" data-contact-details>
-                <p class="text-secondary">Loading contact details…</p>
+              <div class="contact-quick-info">
+                <div class="contact-quick-item">
+                  <span class="contact-quick-label">EMAIL</span>
+                  <a class="contact-quick-value" href="mailto:Arquistic@gmail.com">Arquistic@gmail.com</a>
+                </div>
+                <div class="contact-quick-item">
+                  <span class="contact-quick-label">PHONE</span>
+                  <a class="contact-quick-value" href="tel:03078545607">0307 854 5607</a>
+                </div>
+              </div>
+
+              <div class="contact-social-row">
+                <a href="https://www.instagram.com/arquistic_?igsh=ZXd2bzZubHljMmlk" target="_blank" rel="noreferrer" aria-label="Instagram" class="contact-social-link">
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@arquistic_?_r=1&_t=ZS-940CGiy7ix5" target="_blank" rel="noreferrer" aria-label="TikTok" class="contact-social-link">
+                  <span>TikTok</span>
+                </a>
               </div>
             </div>
-          </aside>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer">

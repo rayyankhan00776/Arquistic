@@ -1,3 +1,5 @@
+import { showToast } from './utils.js';
+
 export function createProductCard(product) {
   const card = document.createElement('article');
   card.className = 'product-card';
@@ -207,5 +209,6 @@ export function setupProductModal({ products, formatMoney, cartStore }) {
     if (!product) return;
     cartStore.addItem(product.id, 1);
     closeModal(overlay);
+    showToast(`${product.name} added to cart`);
   });
 }

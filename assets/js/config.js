@@ -3,7 +3,7 @@ export const CONFIG = {
   productsUrl: './data/products.json',
   contactDetailsUrl: './data/contactDetails.md',
   cartStorageKey: 'arquistic:cart',
-  taxRate: 0.05,
+  taxRate: 0.01,
   deliveryFee: 300,
   // Google Apps Script Web App URL (webhook) to save orders in Google Sheets.
   // Example: https://script.google.com/macros/s/XXXXXXXXXXXX/exec

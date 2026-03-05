@@ -43,10 +43,9 @@ function computeTotals({ items, productsCount }) {
   const subtotal = items.reduce((sum, i) => sum + (Number(i.lineTotal) || 0), 0);
   const uniqueProductIds = new Set(items.map((i) => i.productId));
   const hasAllProducts = uniqueProductIds.size > 0 && uniqueProductIds.size === productsCount;
-
   // Keep totals consistent with renderCheckoutSummary in cart.js
   const delivery = hasAllProducts ? 0 : subtotal > 0 ? 300 : 0;
-  const tax = 5;
+  const tax = Math.round(subtotal * CONFIG.taxRate);
   const total = subtotal + delivery + tax;
 
   return { subtotal, delivery, tax, total };
@@ -136,7 +135,7 @@ export function initCheckoutOrderForm(products) {
       await sendOrderToWebhook(payload);
 
       cartStore.clear();
-      window.location.href = 'cart.html';
+      window.location.href = 'thank-you.html';
     } catch (err) {
       console.error(err);
       alert('Failed to place order. Please try again.');

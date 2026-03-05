@@ -15,8 +15,7 @@
   }
 
   .cart-layout,
-  .checkout-layout,
-  .contact-layout {
+  .checkout-layout {
     grid-template-columns: 1fr;
   }
 
@@ -56,8 +55,7 @@
     margin-bottom: 36px;
   }
 
-  .hero,
-  .page-hero {
+  .hero {
     padding: 64px 16px;
     min-height: auto;
   }
@@ -119,5 +117,19 @@
 @media (min-width: 768px) {
   .icon-btn-menu {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .toast {
+    left: 16px;
+    right: 16px;
+    transform: translateX(0) translateY(100px);
+    text-align: center;
+    white-space: normal;
+  }
+
+  .toast.is-visible {
+    transform: translateX(0) translateY(0);
   }
 }
