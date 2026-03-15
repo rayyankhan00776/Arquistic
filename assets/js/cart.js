@@ -81,7 +81,7 @@ export function renderCartItems(products) {
     const cartItem = document.createElement('div');
     cartItem.className = 'cart-item';
     cartItem.innerHTML = `
-      <img class="cart-item-image" src="${product.image}" alt="${product.name}" />
+      <img class="cart-item-image" src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" />
       <div class="cart-item-details">
         <div class="cart-item-name">${product.name}</div>
         <span class="cart-item-type">${product.type}</span>

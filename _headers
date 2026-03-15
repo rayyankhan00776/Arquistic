@@ -1,0 +1,35 @@
+/*
+  X-Content-Type-Options: nosniff
+
+/assets/css/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/assets/js/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/assets/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/assets/videos/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/data/*
+  Cache-Control: public, max-age=21600, stale-while-revalidate=86400
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/contact.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/cart.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/checkout.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/thank-you.html
+  Cache-Control: public, max-age=0, must-revalidate

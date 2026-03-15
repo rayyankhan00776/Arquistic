@@ -20,6 +20,8 @@ export function createProductCard(product) {
   const img = document.createElement('img');
   img.alt = product.name;
   img.src = product.image;
+  img.loading = 'lazy';
+  img.decoding = 'async';
   imageWrap.appendChild(img);
 
   const quickView = document.createElement('div');
@@ -149,6 +151,7 @@ export function setupProductModal({ products, formatMoney, cartStore }) {
     activeProductId = String(product.id);
     mainImage.src = product.image;
     mainImage.alt = product.name;
+    mainImage.decoding = 'async';
     reviewCount.textContent = String(product.reviews ?? 0);
     productTitle.textContent = product.name;
     productType.textContent = String(product.type || '').toUpperCase();

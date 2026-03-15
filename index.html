@@ -317,8 +317,8 @@
           <div class="events-grid">
             <div class="event-card">
               <div class="event-video-wrapper">
-                <video class="event-video" controls poster>
-                  <source src="assets/videos/IMG_5529.MOV" type="video/mp4">
+                <video class="event-video" controls preload="none" playsinline>
+                  <source src="assets/videos/IMG_5529.MOV" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -330,8 +330,8 @@
 
             <div class="event-card">
               <div class="event-video-wrapper">
-                <video class="event-video" controls poster>
-                  <source src="assets/videos/IMG_5590.MOV" type="video/mp4">
+                <video class="event-video" controls preload="none" playsinline>
+                  <source src="assets/videos/IMG_5590.MOV" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -416,6 +416,7 @@
         aria-hidden="true"
         width="512"
         height="512"
+        loading="lazy"
         decoding="async"
       />
     </a>

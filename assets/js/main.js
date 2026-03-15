@@ -7,6 +7,15 @@ import { renderContactDetails } from './contactDetails.js';
 import { cartStore, renderCartUI, renderCheckoutSummary } from './cart.js';
 import { initCheckoutOrderForm } from './orders.js';
 
+function pageNeedsProducts() {
+  return Boolean(
+    document.querySelector('[data-products-grid]') ||
+      document.getElementById('productModal') ||
+      document.querySelector('[data-cart-items]') ||
+      document.querySelector('[data-checkout-items]')
+  );
+}
+
 async function loadProducts() {
   const data = await fetchJson(CONFIG.productsUrl);
   return Array.isArray(data.products) ? data.products : [];
@@ -63,6 +72,8 @@ function init() {
   initActiveNav();
   initContactForm();
   initNewsletterForm();
+
+  if (!pageNeedsProducts()) return;
 
   (async () => {
     try {

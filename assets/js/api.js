@@ -1,5 +1,5 @@
 export async function fetchJson(url) {
-  const response = await fetch(url, { cache: 'no-store' });
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status}`);
   }
@@ -7,7 +7,7 @@ export async function fetchJson(url) {
 }
 
 export async function fetchText(url) {
-  const response = await fetch(url, { cache: 'no-store' });
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status}`);
   }
