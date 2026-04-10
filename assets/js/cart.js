@@ -1,5 +1,5 @@
 import { CONFIG } from './config.js';
-import { clampInt } from './utils.js';
+import { clampInt, formatMoney } from './utils.js';
 
 function readCart() {
   const raw = localStorage.getItem(CONFIG.cartStorageKey);
@@ -86,7 +86,7 @@ export function renderCartItems(products) {
         <div class="cart-item-name">${product.name}</div>
         <span class="cart-item-type">${product.type}</span>
         <div class="cart-item-volume">${product.volume}</div>
-        <div class="cart-item-price">PKR ${product.price.toLocaleString()}</div>
+        <div class="cart-item-price">${formatMoney(product.price, product.currency || CONFIG.currency)}</div>
         <div class="quantity-selector">
           <button class="qty-minus" data-product-id="${product.id}">−</button>
           <input type="number" class="qty-input" value="${item.quantity}" min="1" max="99" data-product-id="${product.id}" />
@@ -156,16 +156,16 @@ export function updateCartSummary(products) {
   }
 
   const subtotalEl = document.querySelector('[data-summary-subtotal]');
-  if (subtotalEl) subtotalEl.textContent = `PKR ${subtotal.toLocaleString()}`;
+  if (subtotalEl) subtotalEl.textContent = formatMoney(subtotal, CONFIG.currency);
 
   const deliveryEl = document.querySelector('[data-summary-delivery]');
-  if (deliveryEl) deliveryEl.textContent = delivery === 0 ? 'Free' : `PKR ${delivery}`;
+  if (deliveryEl) deliveryEl.textContent = delivery === 0 ? 'Free' : formatMoney(delivery, CONFIG.currency);
 
   const taxEl = document.querySelector('[data-summary-tax]');
-  if (taxEl) taxEl.textContent = `PKR ${tax.toLocaleString()}`;
+  if (taxEl) taxEl.textContent = formatMoney(tax, CONFIG.currency);
 
   const totalEl = document.querySelector('[data-summary-total]');
-  if (totalEl) totalEl.textContent = `PKR ${total.toLocaleString()}`;
+  if (totalEl) totalEl.textContent = formatMoney(total, CONFIG.currency);
 }
 
 export function showEmptyCart() {
@@ -211,7 +211,7 @@ export function renderCheckoutSummary(products) {
     itemEl.innerHTML = `
       <span class="checkout-item-name">${product.name}</span>
       <span class="checkout-item-qty">x${item.quantity}</span>
-      <span class="checkout-item-price">PKR ${(product.price * item.quantity).toLocaleString()}</span>
+      <span class="checkout-item-price">${formatMoney(product.price * item.quantity, product.currency || CONFIG.currency)}</span>
     `;
     container.appendChild(itemEl);
   });
@@ -225,14 +225,14 @@ export function renderCheckoutSummary(products) {
   const total = subtotal + delivery + tax;
 
   const subtotalEl = document.querySelector('[data-summary-subtotal]');
-  if (subtotalEl) subtotalEl.textContent = `PKR ${subtotal.toLocaleString()}`;
+  if (subtotalEl) subtotalEl.textContent = formatMoney(subtotal, CONFIG.currency);
 
   const deliveryEl = document.querySelector('[data-summary-delivery]');
-  if (deliveryEl) deliveryEl.textContent = delivery === 0 ? 'Free' : `PKR ${delivery}`;
+  if (deliveryEl) deliveryEl.textContent = delivery === 0 ? 'Free' : formatMoney(delivery, CONFIG.currency);
 
   const taxEl = document.querySelector('[data-summary-tax]');
-  if (taxEl) taxEl.textContent = `PKR ${tax.toLocaleString()}`;
+  if (taxEl) taxEl.textContent = formatMoney(tax, CONFIG.currency);
 
   const totalEl = document.querySelector('[data-summary-total]');
-  if (totalEl) totalEl.textContent = `PKR ${total.toLocaleString()}`;
+  if (totalEl) totalEl.textContent = formatMoney(total, CONFIG.currency);
 }
