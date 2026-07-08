@@ -55,12 +55,51 @@ function openModal(overlay) {
   overlay.classList.add('is-open');
   overlay.setAttribute('aria-hidden', 'false');
   setBodyScrollLocked(true);
+
+  // Scroll indicator logic for mobile
+  const scrollIndicator = overlay.querySelector('#modalScrollIndicator');
+  const modalContent = overlay.querySelector('.product-modal');
+  if (scrollIndicator && modalContent) {
+    scrollIndicator.classList.remove('is-hidden');
+    
+    // Check if content is actually scrollable
+    const checkScrollable = () => {
+      if (modalContent.scrollHeight > modalContent.clientHeight) {
+        scrollIndicator.style.display = '';
+      } else {
+        scrollIndicator.style.display = 'none';
+      }
+    };
+    
+    // Run check after modal is rendered / layout is complete
+    setTimeout(checkScrollable, 50);
+
+    const onScroll = () => {
+      if (modalContent.scrollTop > 24) {
+        scrollIndicator.classList.add('is-hidden');
+        modalContent.removeEventListener('scroll', onScroll);
+      }
+    };
+    
+    // Reset and add scroll listener
+    modalContent.scrollTop = 0;
+    modalContent.addEventListener('scroll', onScroll);
+    
+    // Save listener reference to clean up later
+    modalContent._onModalScroll = onScroll;
+  }
 }
 
 function closeModal(overlay) {
   overlay.classList.remove('is-open');
   overlay.setAttribute('aria-hidden', 'true');
   setBodyScrollLocked(false);
+
+  const modalContent = overlay.querySelector('.product-modal');
+  if (modalContent && modalContent._onModalScroll) {
+    modalContent.removeEventListener('scroll', modalContent._onModalScroll);
+    delete modalContent._onModalScroll;
+  }
 }
 
 function renderNotes(container, notes) {

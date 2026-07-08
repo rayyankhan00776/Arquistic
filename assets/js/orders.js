@@ -41,8 +41,8 @@ function buildReadableItems(detailedItems) {
 
 function computeTotals({ items, productsCount }) {
   const subtotal = items.reduce((sum, i) => sum + (Number(i.lineTotal) || 0), 0);
-  const uniqueProductIds = new Set(items.map((i) => i.productId));
-  const hasAllProducts = uniqueProductIds.size > 0 && uniqueProductIds.size === productsCount;
+  const totalCount = items.reduce((sum, i) => sum + (Number(i.quantity) || 0), 0);
+  const hasAllProducts = totalCount >= 4;
   // Keep totals consistent with renderCheckoutSummary in cart.js
   const delivery = hasAllProducts ? 0 : subtotal > 0 ? 300 : 0;
   const tax = Math.round(subtotal * CONFIG.taxRate);
