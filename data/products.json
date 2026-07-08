@@ -83,6 +83,69 @@
       },
       "inStock": true,
       "freeShippingThreshold": 10000
+    },
+    {
+      "id": 5,
+      "name": "Bluocean",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 2450,
+      "currency": "PKR",
+      "description": "Bluocean captures the feeling of fresh ocean air with crisp citrus, aromatic herbs, and smooth woody notes. Clean, refreshing, and effortlessly masculine, it’s the perfect everyday fragrance for work, casual outings, or special occasions. Long-lasting and versatile, Polo Blue leaves a confident impression from day to night.",
+      "inspiration": "Inspired by Polo Blue by Ralph Lauren",
+      "image": "assets/images/bluocean.PNG",
+      "rating": 4.8,
+      "reviews": 112,
+      "notes": {
+        "top": ["Melon", "Cucumber", "Mandarin Orange"],
+        "middle": ["Basil", "Sage", "Geranium"],
+        "base": ["Suede", "Woodsy Notes", "Musk"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    },
+    {
+      "id": 6,
+      "name": "Khamaya",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 2550,
+      "currency": "PKR",
+      "description": "Khamaya is a rich, warm, and luxurious fragrance crafted for those who love sweet oriental scents. A captivating blend of warm spices, creamy vanilla, and rich amber creates a bold yet elegant aroma that lasts all day. Perfect for evenings, special occasions, or whenever you want to leave a memorable impression.",
+      "inspiration": "Inspired by Khamrah by Lattafa",
+      "image": "assets/images/khamaya.PNG",
+      "rating": 4.7,
+      "reviews": 95,
+      "notes": {
+        "top": ["Cinnamon", "Nutmeg", "Bergamot"],
+        "middle": ["Dates", "Praline", "Tuberose", "Mahonial"],
+        "base": ["Vanilla", "Tonka Bean", "Amberwood", "Myrrh", "Benzoin", "Akigalawood"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
+    },
+    {
+      "id": 7,
+      "name": "Velmora",
+      "type": "Eau de Parfum",
+      "volume": "50ml / 1.7 fl oz",
+      "concentration": "Eau de Parfum",
+      "price": 2800,
+      "currency": "PKR",
+      "description": "Velmora is a sophisticated and elegant fragrance that blends fresh, floral, and woody accords into a refined scent. Smooth, long-lasting, and effortlessly luxurious, it is designed for those who appreciate timeless style and confidence. Perfect for both daytime wear and special occasions, Velmora leaves a lasting impression of elegance and charm.",
+      "inspiration": "Inspired by Valaya by Parfums de Marly",
+      "image": "assets/images/velmora.PNG",
+      "rating": 4.9,
+      "reviews": 104,
+      "notes": {
+        "top": ["Bergamot", "Lemon", "Green Notes"],
+        "middle": ["Jasmine", "Lily of the Valley", "Violet"],
+        "base": ["Cedarwood", "Sandalwood", "White Musk", "Amber"]
+      },
+      "inStock": true,
+      "freeShippingThreshold": 10000
     }
   ]
 }

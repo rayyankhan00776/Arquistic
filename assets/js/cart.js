@@ -142,9 +142,9 @@ export function updateCartSummary(products) {
     }
   });
 
-  // Check if all 4 products are in cart
+  // Check if all products are in cart
   const allProductIds = new Set(items.map((i) => i.productId));
-  const hasAll4Products = allProductIds.size === 4 && allProductIds.size === products.length;
+  const hasAll4Products = allProductIds.size > 0 && allProductIds.size === products.length;
   
   const delivery = hasAll4Products ? 0 : (subtotal > 0 ? 300 : 0);
   const tax = Math.round(subtotal * CONFIG.taxRate);
@@ -216,9 +216,9 @@ export function renderCheckoutSummary(products) {
     container.appendChild(itemEl);
   });
 
-  // Check if all 4 products are in cart
+  // Check if all products are in cart
   const allProductIds = new Set(items.map((i) => i.productId));
-  const hasAll4Products = allProductIds.size === 4 && allProductIds.size === products.length;
+  const hasAll4Products = allProductIds.size > 0 && allProductIds.size === products.length;
 
   const delivery = hasAll4Products ? 0 : (subtotal > 0 ? 300 : 0);
   const tax = Math.round(subtotal * CONFIG.taxRate);
